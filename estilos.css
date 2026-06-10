@@ -1,0 +1,221 @@
+/* Paleta de colores inspirada en interfaces gubernamentales/cyber */
+:root {
+    --fondo-oscuro: #060b13;
+    --fondo-panel: #0d1a26;
+    --texto-principal: #8ab4f8;
+    --texto-secundario: #5f7a9e;
+    --cian-neon: #00ffff;
+    --borde-tenue: rgba(0, 255, 255, 0.2);
+    
+    /* Colores de alerta */
+    --alerta-debil: #888888;
+    --alerta-moderada: #ffaa00;
+    --alerta-fuerte: #ff003c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--fondo-oscuro);
+    color: var(--texto-principal);
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    border-bottom: 1px solid var(--borde-tenue);
+    padding: 20px;
+    text-align: center;
+    background-color: #04080f;
+}
+
+.logo-simulado {
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: var(--cian-neon);
+    letter-spacing: 1px;
+}
+
+nav {
+    background-color: var(--fondo-panel);
+    border-bottom: 1px solid var(--borde-tenue);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--texto-principal);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: var(--borde-tenue);
+    color: var(--cian-neon);
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.panel-terminal, .panel-resultados {
+    background-color: var(--fondo-panel);
+    border: 1px solid var(--borde-tenue);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+}
+
+h2 {
+    color: var(--cian-neon);
+    border-bottom: 1px dashed var(--texto-secundario);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.grupo-form {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.grupo-form-radio {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--cian-neon);
+}
+
+.grupo-form-radio p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.grupo-form-radio label {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+input[type="text"], select, textarea {
+    background-color: var(--fondo-oscuro);
+    border: 1px solid var(--borde-tenue);
+    color: var(--cian-neon);
+    padding: 10px;
+    font-family: inherit;
+    width: 100%;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--cian-neon);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.btn-primario {
+    background-color: var(--cian-neon);
+    color: var(--fondo-oscuro);
+}
+
+.btn-primario:hover {
+    background-color: #ffffff;
+    box-shadow: 0 0 10px var(--cian-neon);
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--texto-secundario);
+    border: 1px solid var(--texto-secundario);
+}
+
+.btn-secundario:hover {
+    color: var(--texto-principal);
+    border-color: var(--texto-principal);
+}
+
+.oculto {
+    display: none;
+}
+
+#pantalla-resultado {
+    background: var(--fondo-oscuro);
+    padding: 20px;
+    border: 1px solid var(--borde-tenue);
+}
+
+.alerta-base {
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid;
+    background: rgba(0,0,0,0.5);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #04080f;
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+    border-top: 1px solid var(--borde-tenue);
+}
+
+/* Diseño Responsivo */
+@media (max-width: 600px) {
+    .botones {
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 1.4rem;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}

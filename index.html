@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clasificador Web de Evidencias OVNI</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- Encabezado principal -->
+  <header>
+    <h1>Clasificador Web de Evidencias OVNI</h1>
+    <nav>
+      <ul>
+        <li><a href="#formulario">Formulario</a></li>
+        <li><a href="#resultado">Resultado</a></li>
+        <li><a href="#registros">Historial</a></li>
+        <li><a href="#multimedia">Galería</a></li>
+        <li><a href="#acerca">Acerca de</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <!-- Sección formulario -->
+    <section id="formulario">
+      <h2>Registrar evidencia</h2>
+      <form id="ovniForm">
+        <fieldset>
+          <legend>Datos del reporte</legend>
+          <label for="nombre">Nombre del reporte:</label>
+          <input type="text" id="nombre" required>
+
+          <label for="lugar">Lugar del avistamiento:</label>
+          <input type="text" id="lugar" required>
+
+          <label for="testigos">Cantidad de testigos:</label>
+          <input type="number" id="testigos" min="1">
+        </fieldset>
+
+        <fieldset>
+          <legend>Pruebas disponibles</legend>
+          <label><input type="checkbox" id="video"> ¿Existe video?</label>
+          <label><input type="checkbox" id="imagen"> ¿Existe imagen?</label>
+          <label><input type="checkbox" id="radar"> ¿Fue detectado por radar?</label>
+          <label><input type="checkbox" id="explicacion"> ¿Hay explicación científica probable?</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Descripción</legend>
+          <textarea id="descripcion" placeholder="Describe brevemente la evidencia..."></textarea>
+        </fieldset>
+
+        <button type="button" id="btnClasificar">Clasificar Evidencia</button>
+        <button type="reset">Reiniciar</button>
+      </form>
+    </section>
+
+    <!-- Sección resultado -->
+    <section id="resultado">
+      <h2>Resultado de la clasificación</h2>
+      <div id="resultadoTexto"></div>
+      <p id="recomendacion"></p>
+    </section>
+
+    <!-- Sección registros -->
+    <section id="registros">
+      <h2>Historial de registros</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Reporte</th>
+            <th>Lugar</th>
+            <th>Testigos</th>
+            <th>Puntaje</th>
+            <th>Clasificación</th>
+          </tr>
+        </thead>
+        <tbody id="tablaRegistros">
+          <!-- Filas dinámicas con JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Sección multimedia -->
+    <section id="multimedia">
+      <h2>Galería temática</h2>
+      <div class="galeria">
+        <img src="img/ovni.png" alt="Ilustración OVNI" width="250">
+        <img src="img/radar.png" alt="Radar detectando objeto" width="250">
+        <video controls width="300">
+          <source src="img/ovni-video.mp4" type="video/mp4">
+          Tu navegador no soporta video.
+        </video>
+      </div>
+    </section>
+
+    <!-- Sección acerca -->
+    <section id="acerca">
+      <h2>Acerca del proyecto</h2>
+      <p>
+        Este simulador permite evaluar una supuesta evidencia OVNI y clasificarla como débil, moderada o fuerte
+        según criterios definidos en el examen de Programación Web I. Además, guarda un historial de registros
+        y ofrece una galería multimedia para ambientar la experiencia.
+      </p>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>Proyecto recuperatorio - Programación Web I | Autor: Juan Fernando Vaqueros Arias</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
